@@ -1,0 +1,51 @@
+
+body {
+  color: #333;
+  background-color: #F4F0ED;
+}
+
+.Auth {
+  text-align: center;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.card {
+ box-shadow: 0px 3px 3px -2px rgb(0 0 0 / 20%), 0px 3px 4px 0px rgb(0 0 0 / 14%), 0px 1px 8px 0px rgb(0 0 0 / 12%);
+ height: 540px;
+ width: 353px; 
+}
+
+.card-login {
+  box-shadow: 0px 3px 3px -2px rgb(0 0 0 / 20%), 0px 3px 4px 0px rgb(0 0 0 / 14%), 0px 1px 8px 0px rgb(0 0 0 / 12%);
+  height: 350px;
+  width: 335px; 
+ }
+
+.card-rounded {
+  border-radius: 0.5rem;
+}
+
+.error-msg {
+  color: #D8000C;
+  background-color: #FFBABA;
+  width:auto;
+  height: 30px;
+  padding-top:2px;
+  text-align: center;
+  border-radius: 0.5rem;
+  line-height: 1.99 !important;
+}
+
+.searchBar {
+  margin: 85px 10px 15px 10px; 
+}
+
+
+
+
