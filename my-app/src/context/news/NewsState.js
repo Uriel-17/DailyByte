@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react';
+import React, { useReducer, useContext } from 'react';
 import NewsContext from './newsContext';
 import NewsReducer from './newsReducer';
 
@@ -20,19 +20,14 @@ const NewsState = props => {
 
   const searchNews = async (searchTopic) => {
 
-    const response = await fetch(`https://newsapi.org/v2/everything?q=${searchTopic}&apiKey=${process.env.REACT_APP_API_KEY}`); 
-
+    const response = await fetch(`https://newsapi.org/v2/everything?q=${searchTopic}&apiKey=${process.env.REACT_APP_API_KEY}`)
+    
     const data = await response.json(); 
-
-    console.log('searchNews data:');
-    console.log(data);
 
     dispatch({
       type: SEARCH_NEWS,
       payload: data.articles
     });
-
-
 
   }; 
 

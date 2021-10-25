@@ -10,3 +10,5 @@ export const SET_LAST_NAME = 'SET_LAST_NAME';
 export const SET_EMAIL = 'SET_EMAIL'; 
 export const SET_PASSWORD = 'SET_PASSWORD';
 export const SET_ACCOUNT = 'SET_ACCOUNT'; 
+export const SET_ALERT = 'SET_ALERT'; 
+export const REMOVE_ALERT = 'REMOVE_ALERT'; 

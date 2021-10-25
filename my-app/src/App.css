@@ -47,5 +47,11 @@ body {
 }
 
 
+.newsPage {
+  margin: 55px 10px 10px 10px
+}
 
-
+.image-article {
+  width: 500px;
+  height: 300px; 
+}

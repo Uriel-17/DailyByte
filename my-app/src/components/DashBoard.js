@@ -10,13 +10,17 @@ import Grid from '@mui/material/Grid';
 import Box from "@mui/material/Box"; 
 import NewsCard from './NewsCard'; 
 import NewsContext from '../context/news/newsContext';
+import AlertContext from '../context/alert/alertContext'; 
 import Button from '@mui/material/Button';
 
 const DashBoard = () => {
 
   const newsContext = useContext(NewsContext); 
+  const alertContext = useContext(AlertContext); 
 
   const { news, userNews, searchNews, getCurrentNews, clearNews } = newsContext; 
+
+  const { setAlert } = alertContext; 
 
   const history = useHistory(); 
   const classes = useStyles(); 
@@ -24,12 +28,11 @@ const DashBoard = () => {
   const[user, setUser] = useState('');
   const[showUserNews, setShowUserNews] = useState(false); 
   const[search, setSearch] = useState('');
+
   
   const isEmpty = (str) => {
     return (!str || str.length === 0);
   }
-
-  console.log(news);
 
   const authListener = () => {
 
@@ -64,7 +67,7 @@ const DashBoard = () => {
 
     } else {
 
-      console.log('search is empty'); 
+      setAlert('Search is empty!', 'warning') 
     }
 
   };
@@ -99,15 +102,15 @@ const DashBoard = () => {
          {showUserNews ? (
 
           userNews.map( userArticle => (
-            <Grid item lg = {6} sx = {1}>
-              <NewsCard urlImage = {userArticle.urlToImage} title = {userArticle.title} description = {userArticle.description}></NewsCard>
+            <Grid item lg = {6} sx = {1} sm = {12}>
+              <NewsCard author = {userArticle.author} urlToArticle = {userArticle.url} publishedAt = {userArticle.publishedAt} urlImage = {userArticle.urlToImage} title = {userArticle.title} description = {userArticle.description} content = {userArticle.content}></NewsCard>
             </Grid>
           ))
 
          ) : (
           news.map( newsArticle => (
-            <Grid item lg = {6} sx = {1}>
-              <NewsCard urlImage = {newsArticle.urlToImage} title = {newsArticle.title} description = {newsArticle.description}></NewsCard>
+            <Grid item lg = {6} sm = {12}>
+              <NewsCard author = {newsArticle.author} urlToArticle = {newsArticle.url} publishedAt = {newsArticle.publishedAt} urlImage = {newsArticle.urlToImage} title = {newsArticle.title} description = {newsArticle.description} content = {newsArticle.content}></NewsCard>
             </Grid>
           ))
 

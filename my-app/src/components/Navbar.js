@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import fire from '../context/fire';
 import { getFirestore, collection, query, where, getDocs } from "firebase/firestore";
-
 import { getAuth, onAuthStateChanged, signOut} from "firebase/auth";
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Typography from '@mui/material/Typography';
 import Toolbar from '@mui/material/Toolbar';
@@ -92,7 +91,7 @@ const Navbar = () => {
     <AppBar position="static" style = {{background: '#16435A'}}>
       <Toolbar>
         <Typography className = {classes.title} variant="h6" component="div">
-          DailyByte
+          <Link to = '/' style = {{textDecoration: 'none', color: '#fff'}}>DailyByte</Link>
         </Typography>
 
         {!show ? (
@@ -124,26 +123,3 @@ const Navbar = () => {
 };
 
 export default Navbar; 
-
-/*
-
- <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
-        <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            News
-          </Typography>
-          <Button color="inherit">Login</Button>
-        </Toolbar>
-      </AppBar>
-    </Box>
-*/

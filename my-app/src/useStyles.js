@@ -37,21 +37,25 @@ const useStyles = makeStyles({
     margin: '15px 10px 10px 10px !important',
     justifyContent: 'center',
     width: '230px !important',
-    background: '#1A73E8 !important',
+    background: '#16435A !important',
     color: '#fff !important'
   },
 
   title: {
 
-    flexGrow: '1',
+    flexGrow: '1', 
     letterSpacing: "1px !important",
     margin: '5px 10px 5px 40px !important'
 
   },
 
   greeting: {
-
     letterSpacing: '1px !important'
+  },
+
+  card: {
+    paddingBottom: "5px !important",
+    marginBottom: "5px !important"
   }
 
 
