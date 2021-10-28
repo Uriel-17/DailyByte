@@ -43,11 +43,14 @@ const NewsArticle = (props) => {
         {title.title}
       </Typography>
       <Typography align = 'center' variant = 'h6' gutterBottom>
-        <img className = 'image-article'src = {urlImage.urlImage}></img>  
+        <img className = 'image-article' src = {urlImage.urlImage}></img>  
+      </Typography>
+      <Typography align = 'left' variant = 'subtitle2' gutterBottom style = {{tabSize: "8 !important"}}>
+        {"Publisher: " + author.author}  
       </Typography>
       <Typography align = 'left' variant = 'subtitle2' gutterBottom>
-        {author.author + " " + publishedAt.publishedAt} 
-      </Typography>
+        {"Published: " + publishedAt.publishedAt} 
+      </Typography>    
       <Typography align = 'left' variant = 'subtitle2' gutterBottom>
         {"View Full Article: "}
        <a href = {urlToArticle.urlToArticle} target = "_blank" rel = "noopener noreferrer">{urlToArticle.urlToArticle}</a> 

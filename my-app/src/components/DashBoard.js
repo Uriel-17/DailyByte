@@ -54,7 +54,6 @@ const DashBoard = () => {
 
   const handleSearch = () => {
 
-
     if(!isEmpty(search)) {
 
       clearNews(); 
@@ -62,8 +61,6 @@ const DashBoard = () => {
       searchNews(search); 
 
       setShowUserNews(true); 
-
-      console.log('showUserNews: ', showUserNews); 
 
     } else {
 
@@ -86,44 +83,29 @@ const DashBoard = () => {
         <div className = 'searchBar'>
           <Typography align = 'center' variant = 'h6' >Search For The News You Want</Typography>
           <TextField placeholder = 'Search...'  margin = 'normal' fullWidth onChange = {(e) => {setSearch(e.target.value)}} value = {search}></TextField>
-
           <Typography align = 'center'>
             <Button className = {classes.searchBtn} size = 'large' type = 'submit' onClick = {handleSearch} variant = 'contained'>Search</Button>
           </Typography>
-         
-        
-        
-        
         </div>
       <Box lg = {{ flexGrow: 1}}>
         <Container maxWidth = 'md'>
           <Grid container spacing = {3} align = 'center'>
           
          {showUserNews ? (
-
           userNews.map( userArticle => (
-            <Grid item lg = {6} sx = {1} sm = {12}>
+            <Grid item lg = {6} sm = {12}>
               <NewsCard author = {userArticle.author} urlToArticle = {userArticle.url} publishedAt = {userArticle.publishedAt} urlImage = {userArticle.urlToImage} title = {userArticle.title} description = {userArticle.description} content = {userArticle.content}></NewsCard>
             </Grid>
           ))
 
-         ) : (
-          news.map( newsArticle => (
-            <Grid item lg = {6} sm = {12}>
-              <NewsCard author = {newsArticle.author} urlToArticle = {newsArticle.url} publishedAt = {newsArticle.publishedAt} urlImage = {newsArticle.urlToImage} title = {newsArticle.title} description = {newsArticle.description} content = {newsArticle.content}></NewsCard>
-            </Grid>
-          ))
-
-
-         )
-
-
+          ) : (
+            news.map( newsArticle => (
+              <Grid item lg = {6} sm = {12}>
+                <NewsCard author = {newsArticle.author} urlToArticle = {newsArticle.url} publishedAt = {newsArticle.publishedAt} urlImage = {newsArticle.urlToImage} title = {newsArticle.title} description = {newsArticle.description} content = {newsArticle.content}></NewsCard>
+              </Grid>
+            ))
+          )
          }
-            
-            
-
-      
-
           </Grid>
         </Container>
         </Box>

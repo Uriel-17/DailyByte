@@ -31,7 +31,7 @@ const NewsCard = ({ author, urlImage, urlToArticle, publishedAt, title, descript
         >
           <CardMedia
             component = "img"
-            height = "140"
+            className = {classes.media}
             src = 'img'
             image = {urlImage}
             alt = "no pic found"

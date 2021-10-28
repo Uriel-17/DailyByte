@@ -25,7 +25,6 @@ const Login = () => {
 
     signInWithEmailAndPassword(auth, email, password)
     .then((user) => { 
-      //console.log(user);
       history.push('/DashBoard'); 
     })
     .catch((error) => {

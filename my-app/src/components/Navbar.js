@@ -11,7 +11,8 @@ import AccountCircleRoundedIcon from '@mui/icons-material/AccountCircleRounded';
 import LogoutIcon from '@mui/icons-material/Logout';
 import LoginIcon from '@mui/icons-material/Login';
 import useStyles from '../useStyles';
-
+import Container from '@mui/material/Container';
+import Grid from '@mui/material/Grid';
 const Navbar = () => {
 
   const auth = getAuth();
@@ -60,13 +61,13 @@ const Navbar = () => {
 
       if(user) {
         
-        setUser(user);
+        setUser('/DashBoard');
         setShow(true); 
         getUser(user); 
 
       } else {
         
-        setUser('');
+        setUser('/');
         setShow(false); 
 
       }
@@ -90,36 +91,46 @@ const Navbar = () => {
  
     <AppBar position="static" style = {{background: '#16435A'}}>
       <Toolbar>
-        <Typography className = {classes.title} variant="h6" component="div">
-          <Link to = '/' style = {{textDecoration: 'none', color: '#fff'}}>DailyByte</Link>
-        </Typography>
-
-        {!show ? (
-          <div>
-            <Button onClick = {signUp} color="inherit">
-              <LoginIcon></LoginIcon>
-              SignUp
-            </Button>
-            <Button onClick = {login} color="inherit">
-              <AccountCircleRoundedIcon></AccountCircleRoundedIcon>
-              login
-            </Button>
-          </div>  
-        ): (
-          <Typography className = {classes.greeting} variant = 'string' component = 'div'>
-            Hello, {name}
-            <Button onClick = {logout} color="inherit">
-              <LogoutIcon></LogoutIcon>
-              Logout
-            </Button>
-          </Typography>
-        )}
-        
+      <Container maxWidth = 'xl'>
+        <Grid container spacing = {2} align = 'center'>
+          <Grid item lg = {3} sm = {3} xs = 'auto'>
+            <Typography className = "title" variant="h6" component="div">
+              <Link to = {user} style = {{textDecoration: 'none', color: '#fff'}}>DailyByte</Link>
+            </Typography>
+          </Grid>
+      
+          {!show ? (
+            <Grid item lg = {9} sm = {9} xs = {8}>
+              <div className = 'user-info'>
+                <Button onClick = {signUp} color="inherit">
+                  <LoginIcon></LoginIcon>
+                  SignUp
+                </Button>
+                <Button onClick = {login} color="inherit">
+                  <AccountCircleRoundedIcon></AccountCircleRoundedIcon>
+                  login
+                </Button>
+              </div>  
+            </Grid>
+          ): (
+            <Grid item lg = {9} sm = {9} xs = {8}>
+              <div className = 'user-info'>
+                <Typography className = "greetings" variant = 'string' component = 'span'>
+                  Hello, {name}
+                </Typography>
+                <Button onClick = {logout} className = 'show' color="inherit">
+                    <LogoutIcon></LogoutIcon>
+                    Logout
+                  </Button>
+              </div>
+            </Grid>
+          )}
+        </Grid>
+        </Container>
       </Toolbar>
     </AppBar>
 
   );
-
 };
 
 export default Navbar; 

@@ -52,6 +52,35 @@ body {
 }
 
 .image-article {
-  width: 500px;
-  height: 300px; 
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+}
+
+.greetings {
+  letter-Spacing: '1px !important'; 
+}
+
+.user-info {
+  letter-Spacing: "1px !important";
+  text-align: end;
+}
+
+
+.title {
+  text-align: center;
+  letter-Spacing: "1px !important";
+}
+
+
+
+@media screen and (max-width: 1026px) {
+
+  .greetings {
+    display:none
+  }
+
+  .show {
+    text-align: end;
+  } 
 }

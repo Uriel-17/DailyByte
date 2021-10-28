@@ -29,7 +29,7 @@ const useStyles = makeStyles({
   btn: {
     margin: '15px !important',
     width: '230px !important',
-    background: '#1A73E8 !important',
+    background: '#16435A !important',
     color: '#fff !important'
   },
 
@@ -56,6 +56,11 @@ const useStyles = makeStyles({
   card: {
     paddingBottom: "5px !important",
     marginBottom: "5px !important"
+  }, 
+
+  media: {
+    height: "150px",
+    width: '100%',
   }
 
 
@@ -64,32 +69,3 @@ const useStyles = makeStyles({
 
 export default useStyles; 
 
-
-
-
-// const useStyles = makeStyles((theme) => ({
-//   root: {
-//     margin: '1px',
-//     width: '25ch',
-//   },
-
-//   btn: {
-//     margin: '15px',
-//     width: '230px',
-//     background: '#1A73E8',
-//     color: '#fff'
-//   },
-
-//   drawer: {
-//     width: 240,
-//   },
-
-//   drawerPaper: {
-//     width: 240
-//   },
-
-//   active: {
-//     background: '#f4f4f4'
-//   }
-
-// }));
