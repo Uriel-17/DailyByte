@@ -9,7 +9,6 @@ ReactJS, React Router, News API, Fetch API, Firebase auth and firestore, HTML5/C
 ## Login/SignUp
 
 <img width="1908" alt="Screen Shot 2021-10-27 at 9 52 19 PM" src="https://user-images.githubusercontent.com/70834937/139196381-d467f506-fdf6-41aa-856f-dcbb6ff2cd18.png">
-<img width="1908" alt="Screen Shot 2021-10-27 at 9 52 19 PM" src="https://user-images.githubusercontent.com/70834937/139196527-b21d97df-0dbe-4450-bbda-630c34ae4e9b.png">
 
 ## Desktop
 <img width="2035" alt="Screen Shot 2021-10-27 at 11 06 47 PM" src="https://user-images.githubusercontent.com/70834937/139196873-a1ebfee9-c625-4782-b20b-43b8304ddf5b.png">
